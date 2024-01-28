@@ -457,7 +457,75 @@ HostEONS，一家注册于新加坡的资深网络托管服务提供商，成立
 
 Vps优惠指南综合整理了2024年度内部分知名VPS云服务器商家的最新优惠促销活动，这些商家不仅提供了多样化的产品和服务，还通过各种优惠措施来吸引潜在客户。EthernetServers以其老牌的运营经验和广泛的地理覆盖范围受到认可；CloudCone凭借小时计费模式和抗攻击IP等增值服务获得关注；RackNerd作为经济型VPS解决方案的重要供应商而备受瞩目；DesiVPS则以OpenVZ和KVM技术提供多元化托管服务；而HostEONS则以大流量和高性价比的产品方案著称。这些服务商通过支付宝、信用卡、Paypal等多种支付渠道简化交易流程，并通过官方网站及时发布最新的促销信息和优惠码，以增强市场竞争力。此外，Vps优惠指南还在另一文中分享了[2024年稳定高速的CN2 GIA线路VPS云服务器商家优惠促销整理推荐汇总](https://www.vpsoffers.net/cn2-gia/cn2-gia-cn2-gia-vps-discount-update.html)，它们性能强悍，是大流量网站服务器首选了，都是实时保持更新。总体而言，这些商家的优惠促销不仅反映了当前市场的竞争态势，也为用户提供了丰富的选择空间，使得个人和企业能够根据自身需求做出更加明智的决策。
 
- 
+ #### VPS新手建站必备技能 - 宝塔面板安装教程
+
+宝塔面板是一个优秀的国产VPS主机控制面板，非常适合个人+新手使用VPS主机建站使用。很多人从虚拟主机转到VPS主机建站后，害怕Linux各种命令，尤其是对于Nginx配置扩展、静态重写规则等感到恐惧。其实，要求所有人都学习Linux命令是不现实的。
+
+很多做自媒体的朋友擅长推广和写作，让他们搞运维实在是为难。有了宝塔面板，可以让你的VPS主机变成虚拟主机，特别适合新手朋友建站使用。宝塔面板可以一键配置服务器环境（LAMP/LNMP）、一键部署SSL证书，提供方便高效的文件管理器（上传、下载、压缩、解压等）。
+
+支持一键安装常用PHP扩展fileinfo、intl、opcache、imap、memcache、apc、redis、ioncube、imagick，另外宝塔面板提供“软件商店”，这里提供了宝塔插件，例如又拍云存储、腾讯云COS、微软OneDrive、阿里云OSS、Fail2ban、Docker管理器等都已经被整合。
+
+
+
+本文就来分享一下宝塔面板安装与使用图文教程，更多的VPS主机免费控制面板参考：服务器控制面板榜单， 目前用于个人建站推荐的VPS控制面板有：
+
+1. Oneinstack从入门到精通-Oneinstack安装与使用教程收集整理
+2. LNMP 1.6安装与使用-自动开启TLS 1.3和支持PHP 7.3\MariaDB 10.3
+3. LAMP.sh一键安装包轻松搭建Apache建站环境-自动安装SSL和PHP组件
+
+PS：更新记录.
+
+> 1、最新的宝塔面板建站使用教程请查看：新版宝塔面板安装与使用教程-利用宝塔面板在VPS主机上搭建网站。2022.5.28
+>
+> 2、不想要使用Apache和Nginx，追求更高的OpenLiteSpeed和支持LSCache高性能缓存，请使用：CyberPanel免费开源面板-高速LSCache免费SSL证书-可自建DNS和企业邮局。2021.5.10
+
+#### 一、宝塔面板安装过程
+
+网站：
+
+1. www.bt.cn
+
+##### 1.1 一台VPS主机
+
+准备好一台VPS主机：VPS主机排行榜单，宝塔面板对VPS主机的系统要求如下：
+
+> 内存：512M以上，推荐768M以上（纯面板约占系统60M内存）
+>
+> 硬盘：300M以上可用硬盘空间（纯面板约占20M磁盘空间）
+>
+> 系统：CentOS 7.1+ (Ubuntu16.04+.、Debian9.0+)，确保是干净的操作系统，没有安装过其它环境带的Apache/Nginx/php/MySQL/pgsql/gitlab/java（已有环境不可安装）
+>
+> 架构：x86_64（主流服务器均是此架构），ARM不完整兼容（面板环境安装慢，部分软件可能安装不上）
+
+注意：宝塔Linux面板7.4.5版本是基于Centos开发的，为了最好的兼容性，请优先考虑使用Centos8.x系统，系统兼容性顺序：
+
+> Centos8.x > Centos7.x > Ubuntu18.04 > Debian10 > Ubuntu 20.04 > 其它系统
+
+#####  2.1 宝塔面板一键安装
+
+登录你的VPS主机，然后根据你的操作系统执行以下安装命令：
+
+**Centos安装命令：**
+
+yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh
+
+**Ubuntu/Deepin安装命令：**
+
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh
+
+**Debian安装命令：**
+
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && bash install.sh
+
+**Fedora安装命令:**
+
+wget -O install.sh http://download.bt.cn/install/install_6.0.sh && bash install.sh
+
+**Linux面板7.4.5升级命令：**
+
+curl http://download.bt.cn/install/update6.sh|bash
+
+稍等一会儿，你就可以看到宝塔面板安装成功了， 记下最后生成的登录地址、账号和密码等等。
 
 ### 结语：
 
